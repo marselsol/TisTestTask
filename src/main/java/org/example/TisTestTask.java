@@ -9,10 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TisTestTask {
     public static void main(String[] args) {
-        long start = System.currentTimeMillis();
         fillingList(1_000_000);
-        long finish = System.currentTimeMillis();
-        System.out.println(finish - start);
     }
 
     public static List<Integer> fillingList(int requiredNumberOfPrimes) {
