@@ -9,7 +9,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TisTestTask {
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         fillingList(1_000_000);
+        long finish = System.currentTimeMillis();
+        System.out.println(finish - start);
     }
 
     public static List<Integer> fillingList(int requiredNumberOfPrimes) {
@@ -49,9 +52,9 @@ public class TisTestTask {
                 e.printStackTrace();
             }
         }
-        List<Integer> newL = new ArrayList<>(primeNum);
-        Collections.sort(newL);
-        return newL.subList(0, requiredNumberOfPrimes);
+        List<Integer> primeNumList = new ArrayList<>(primeNum);
+        Collections.sort(primeNumList);
+        return primeNumList.subList(0, requiredNumberOfPrimes);
     }
 
     private static boolean isPrimeNumber(int number) {

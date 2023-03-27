@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e704389-1d79-4e99-9b34-72ebdd9339c9" name="Changes" comment="initial commit">
+    <list default="true" id="8e704389-1d79-4e99-9b34-72ebdd9339c9" name="Changes" comment="The changes have been made according to the requirements of the task.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TisTestTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TisTestTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TisTestTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TisTestTaskTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +40,9 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.TisTestTaskTest.testFillingList">
-    <configuration name="oneThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.oneThread" />
+  <component name="RunManager" selected="Application.TisTestTask">
+    <configuration name="TisTestTask" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.TisTestTask" />
       <module name="TisTestTask" />
       <extension name="coverage">
         <pattern>
@@ -99,11 +98,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TisTestTask" />
         <item itemvalue="JUnit.TisTestTaskTest.testFillingList" />
         <item itemvalue="JUnit.TisTestTaskTest" />
         <item itemvalue="JUnit.TisTestTaskTest.testMultithreadedArrayFilling" />
         <item itemvalue="Application.testEx1" />
-        <item itemvalue="Application.oneThread" />
       </list>
     </recent_temporary>
   </component>
@@ -117,7 +116,7 @@
       <updated>1679691846072</updated>
       <workItem from="1679691847413" duration="4140000" />
       <workItem from="1679728145194" duration="3933000" />
-      <workItem from="1679828044222" duration="15899000" />
+      <workItem from="1679828044222" duration="16397000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1679695683217</created>
@@ -126,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679695683217</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="The changes have been made according to the requirements of the task.">
+      <created>1679910344884</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679910344884</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +151,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="The changes have been made according to the requirements of the task." />
+    <option name="LAST_COMMIT_MESSAGE" value="The changes have been made according to the requirements of the task." />
   </component>
 </project>
