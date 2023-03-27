@@ -3,27 +3,40 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class TisTestTask {
     public static void main(String[] args) {
-        multithreadedArrayFilling(111_111);
+        fillingList(1_000_000);
     }
 
-    static public List<Integer> multithreadedArrayFilling(int lastNumber) {
-        List<Integer> list = Collections.synchronizedList(new ArrayList<>());
-        List<Thread> threadList = new ArrayList<>();
+    public static List<Integer> fillingList(int requiredNumberOfPrimes) {
+        if (requiredNumberOfPrimes < 1) {
+            return new ArrayList<>();
+        }
         int amountThreads = Runtime.getRuntime().availableProcessors();
-        int sizeThread = (lastNumber / amountThreads) + 1;
+        int sizeStack = requiredNumberOfPrimes <= amountThreads ? amountThreads : requiredNumberOfPrimes / amountThreads;
+        AtomicInteger sumLoop = new AtomicInteger();
+        Set<Integer> primeNum = new ConcurrentSkipListSet<>();
+        List<Thread> threadList = new ArrayList<>();
 
         for (int i = 0; i < amountThreads; i++) {
-            int k = i;
+
             Thread thread = new Thread(() -> {
-                List<Integer> listInFori = new ArrayList<>();
-                for (int j = k * sizeThread; j < k * sizeThread + sizeThread; j++) {
-                    if (isPrimeNumber(j) && j <= lastNumber)
-                        listInFori.add(j);
+                while (requiredNumberOfPrimes >= primeNum.size()) {
+                    int localSumLoop = sumLoop.get();
+                    sumLoop.set(sumLoop.get() + sizeStack);
+                    int finishLocalSumLoop = localSumLoop + sizeStack;
+                    List<Integer> primeNumList = new ArrayList<>();
+                    for (int j = localSumLoop; j <= finishLocalSumLoop; j++) {
+                        if (isPrimeNumber(j)) {
+                            primeNumList.add(j);
+                        }
+                    }
+                    primeNum.addAll(primeNumList);
                 }
-                list.addAll(listInFori);
             });
             thread.start();
             threadList.add(thread);
@@ -36,8 +49,9 @@ public class TisTestTask {
                 e.printStackTrace();
             }
         }
-        Collections.sort(list);
-        return list;
+        List<Integer> newL = new ArrayList<>(primeNum);
+        Collections.sort(newL);
+        return newL.subList(0, requiredNumberOfPrimes);
     }
 
     private static boolean isPrimeNumber(int number) {
