@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TisTestTask {
     public static void main(String[] args) {
-        fillingList(1_000_000);
+        fillingList(100000);
     }
 
     public static List<Integer> fillingList(int requiredNumberOfPrimes) {
@@ -17,7 +17,8 @@ public class TisTestTask {
             return new ArrayList<>();
         }
         int amountThreads = Runtime.getRuntime().availableProcessors();
-        int sizeStack = requiredNumberOfPrimes <= amountThreads ? amountThreads : requiredNumberOfPrimes / amountThreads;
+//        int sizeStack = requiredNumberOfPrimes <= amountThreads ? amountThreads : requiredNumberOfPrimes / amountThreads;
+        int sizeStack = 5000;
         AtomicInteger sumLoop = new AtomicInteger();
         Set<Integer> primeNum = new ConcurrentSkipListSet<>();
         List<Thread> threadList = new ArrayList<>();
